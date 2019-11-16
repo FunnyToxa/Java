@@ -1,6 +1,6 @@
 public class Task5 {
 	public static void main(String[] args){
-		String inS = "ACW1048576"; //ACW - 777, проверил в excel :)
+		String inS = "BCT1048576"; //ACW - 777, проверил в excel :)
 		getNumeric(inS);
 	}
 	
