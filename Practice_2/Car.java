@@ -1,9 +1,12 @@
 public class Car implements Comparable<Car> {
-	private int type, gNum, milage;
-	private String dopInfo;
+	private int type, gNum, milage; //тип авто, гос номер, пробег
+	private String dopInfo; //доп инфо
+	//массив с суммарной стоимостью по каждому типу авто, в порядке соответственно: 0 = C100, 1 = C200 и т.д.
 	private static double[] cost = new double[4]; 
+	// тип авто с минимальной и максимальной стоимостью , -1 означает, что тип авто не определен
 	private static int minType = -1; 
 	private static int maxType = -1;
+	// общая, минимальная и максимальная стоимость 
 	private static double allCost, minCost, maxCost;
 	
 	
@@ -13,7 +16,8 @@ public class Car implements Comparable<Car> {
 		String[] carInfoArr = carInfoStr.replace('_', '-').split("-");
 		getInfo(carInfoArr);
 	}
-	
+
+	//получаем информацию по строке
 	private void getInfo(String[] arrInfo){
 		// Определяем пробег, гос номер и доп инфо.
 		gNum = Integer.valueOf(arrInfo[1]);
