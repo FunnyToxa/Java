@@ -82,4 +82,10 @@ public class Calculator {
 			history[historyPos - 1] = expr;
 		}
 	}
+
+	//очистка истории
+	public void clearHistory(){
+		history = new String[10];
+		historyPos = 0;
+	}
 }
