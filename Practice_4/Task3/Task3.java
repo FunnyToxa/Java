@@ -15,7 +15,7 @@ public class Task3 {
         System.out.println(coll);
     }
 
-    public static Collection<Integer> removeDuplicates(Collection<Integer> collection){
-        return new HashSet<Integer>(collection);
+    public static <T>Collection<T> removeDuplicates(Collection<T> collection){
+        return new HashSet<T>(collection);
     }
 }
