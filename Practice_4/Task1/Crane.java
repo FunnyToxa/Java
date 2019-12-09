@@ -10,7 +10,7 @@ public class Crane extends Car{
         return  "тяжелая техника(краны)";
     }
 
-    public Crane(ICarParams dtoCarParams) {
+    public Crane(DTOCarParams dtoCarParams) {
         super(dtoCarParams);
     }
 }

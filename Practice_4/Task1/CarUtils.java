@@ -27,28 +27,28 @@ public class CarUtils{
 
 
     //Функция создания машины
-    public static Car createCar(ICarParams dtoCarParams){
+    public static Car createCar(DTOCarParams dtoCarParams){
         Car tmpCar = null;
         switch (dtoCarParams.getType()) {
             case ("C100"):
                 tmpCar = new LCar(dtoCarParams);
-                tmpCar.setFuelCons(12.5); //TODO: правильно ли задавать стоимость топлива и расход здесь?
-                tmpCar.setFuelType(46.10);
+                tmpCar.setFuelCons(12.5);
+                tmpCar.setFuelPrice(46.10);
                 break;
             case ("C200"):
                 tmpCar = new Truck(dtoCarParams);
                 tmpCar.setFuelCons(12);
-                tmpCar.setFuelType(48.90);
+                tmpCar.setFuelPrice(48.90);
                 break;
             case ("C300"):
                 tmpCar = new Bus(dtoCarParams);
                 tmpCar.setFuelCons(11.5);
-                tmpCar.setFuelType(47.50);
+                tmpCar.setFuelPrice(47.50);
                 break;
             case ("C400"):
                 tmpCar = new Crane(dtoCarParams);
                 tmpCar.setFuelCons(20);
-                tmpCar.setFuelType(48.90);
+                tmpCar.setFuelPrice(48.90);
                 break;
         }
 		tmpCar.setAdditionalInfo(dtoCarParams.getAdditionalInfo());

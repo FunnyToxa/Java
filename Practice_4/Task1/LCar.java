@@ -11,7 +11,7 @@ public class LCar extends Car{
         return "Легковой авто";
     }
 
-    public LCar(ICarParams dtoCarParams) {
+    public LCar(DTOCarParams dtoCarParams) {
         super(dtoCarParams);
     }
 }

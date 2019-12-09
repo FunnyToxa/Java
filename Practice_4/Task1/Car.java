@@ -1,4 +1,4 @@
-public abstract class Car implements Comparable<Car> {
+public abstract class Car implements Comparable<Car>, ICar {
 	//гос номер
 	private int gosNumber;
 	//пробег
@@ -11,16 +11,15 @@ public abstract class Car implements Comparable<Car> {
 	private String type;
 
 	//стоимость топлива и расход
-	private double fuelType, fuelCons;
+	private double fuelPrice, fuelCons;
 
 	//статические геттеры и сеттеры
-	public double getFuelType() {return fuelType;}
-	public void setFuelType(double fuelType) {this.fuelType = fuelType;}
+	public double getFuelPrice() {return fuelPrice;}
+	public void setFuelPrice(double fuelPrice) {this.fuelPrice = fuelPrice;}
 	public double getFuelCons() {return fuelCons;}
 	public void setFuelCons(double fuelCons) {this.fuelCons = fuelCons;}
 
 	//геттеры  и сеттеры
-	public double getCost() {return milage * fuelCons * fuelType;} //TODO: можно ли здесь реализовать?
 //	public void setCost(double cost) {this.cost = cost;}
 	public int getGosNumber() {return gosNumber;}
 	public void setGosNumber(int gosNumber) {this.gosNumber = gosNumber;}
@@ -31,16 +30,22 @@ public abstract class Car implements Comparable<Car> {
 	public String getType() {return type;}
 	public void setType(String type) {this.type = type;}
 
+	//метод подсчета стоимости
+	@Override
+	public double getCost() {return milage * fuelCons * fuelPrice;}
+
+	//TODO: надо ли выносить в интерфейс ICar?
 	//добавление милей
 	public void addMilage(int milage){
 		this.milage += milage;
 	}
+	//добавление доп информации
 	public void addAdditionalInfo(int additionalInfo){
 		this.additionalInfo += additionalInfo;
 	}
 
 	// конструктор, принимающий временный объект со структурированной информацией о машине
-	public Car (ICarParams dtoCarParams){
+	public Car (DTOCarParams dtoCarParams){
 		gosNumber = dtoCarParams.getGosNumber();
 		milage = dtoCarParams.getMilage();
 		additionalInfo = dtoCarParams.getAdditionalInfo();
@@ -49,9 +54,8 @@ public abstract class Car implements Comparable<Car> {
 	//конструктор по умолчанию
 	public Car() {	}
 
-    public String getTypeName() {
-        return  "Авто";
-    }
+	//Абстрактный класс получение имени типа
+    public abstract String getTypeName();
 
 	@Override
 	public String toString() {

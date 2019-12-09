@@ -11,7 +11,7 @@ public class Truck extends Car{
         return "Грузовой авто";
     }
 
-    public Truck(ICarParams dtoCarParams) {
+    public Truck(DTOCarParams dtoCarParams) {
         super(dtoCarParams);
     }
 }

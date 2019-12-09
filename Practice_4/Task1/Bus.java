@@ -11,7 +11,7 @@ public class Bus extends Car{
         return "Пассажирский транспорт";
     }
 
-    public Bus(ICarParams dtoCarParams) {
+    public Bus(DTOCarParams dtoCarParams) {
         super(dtoCarParams);
     }
 }

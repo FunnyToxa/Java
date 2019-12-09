@@ -1,4 +1,4 @@
-public class DTOCarParams implements ICarParams {
+public class DTOCarParams {
 	//тип авто
 	private String type;
 	//гос номер
@@ -16,20 +16,12 @@ public class DTOCarParams implements ICarParams {
 	}
 
 	//геттеры и сеттеры по полям
-	@Override
 	public String getType() {return type;}
-	@Override
 	public void setType(String type) {this.type = type;}
-	@Override
 	public int getGosNumber() {return gosNumber;}
-	@Override
 	public void setGosNumber(int gosNumber) {this.gosNumber = gosNumber;}
-	@Override
 	public int getMilage() {return milage;}
-	@Override
 	public void setMilage(int milage) {this.milage = milage;}
-	@Override
 	public int getAdditionalInfo() {return additionalInfo;}
-	@Override
 	public void setAdditionalInfo(int additionalInfo) {this.additionalInfo = additionalInfo;}
 }
